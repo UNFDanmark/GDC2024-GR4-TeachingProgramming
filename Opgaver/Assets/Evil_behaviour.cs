@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Evil_behaviour : MonoBehaviour
+public class evilBehaviour : MonoBehaviour
 {
-    public int enemy_cooldown = 1;
+    public int enemyCooldown = 1;
     
     // Start is called before the first frame update
+    Rigidbody rb;
     void Start()
     {
         Debug.Log("Hej, jeg er ond!");
@@ -15,6 +16,5 @@ public class Evil_behaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
     }
 }
