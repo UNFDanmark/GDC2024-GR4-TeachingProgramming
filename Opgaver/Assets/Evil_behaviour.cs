@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Evil_behaviour : MonoBehaviour
 {
+    public int enemy_cooldown = 1;
+    
     // Start is called before the first frame update
     void Start()
     {
