@@ -17,7 +17,7 @@ public class Player : MonoBehaviour
     {
         Vector3 movement = rb.velocity;
         movement.x = Input.GetAxisRaw("Horizontal") * player_speed;
-        movement.y = Input.GetAxisRaw("Vertical") * player_speed;
+        movement.z = Input.GetAxisRaw("Vertical") * player_speed;
         rb.velocity = movement;
     }
 }
