@@ -19,6 +19,8 @@ public class Player : MonoBehaviour
         Vector3 movement = rb.velocity;
         movement.x = Input.GetAxisRaw("Horizontal") * player_speed;
         movement.z = Input.GetAxisRaw("Vertical") * player_speed;
+        if (Input.GetKeyDown(KeyCode.Space))
+            movement.y = movement.y + 10;
         rb.velocity = movement;
         
         animator.SetFloat("Speed", rb.velocity.magnitude);  
