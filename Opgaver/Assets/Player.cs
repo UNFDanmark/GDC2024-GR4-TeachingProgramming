@@ -5,6 +5,7 @@ public class Player : MonoBehaviour
 {
     Rigidbody rb;
     public int player_speed = 5;
+    public Animator animator;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,5 +20,7 @@ public class Player : MonoBehaviour
         movement.x = Input.GetAxisRaw("Horizontal") * player_speed;
         movement.z = Input.GetAxisRaw("Vertical") * player_speed;
         rb.velocity = movement;
+        
+        animator.SetFloat("Speed", rb.velocity.magnitude);  
     }
 }

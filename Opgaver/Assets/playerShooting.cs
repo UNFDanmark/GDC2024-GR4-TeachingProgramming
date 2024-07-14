@@ -9,6 +9,7 @@ public class playerShooting : MonoBehaviour
     public float cooldown = 0.2f;
     public float shootingPower = 5f;
     private float cooldownLeft;
+    public Animator animator;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +26,8 @@ public class playerShooting : MonoBehaviour
              Rigidbody rigidbodyBullet = spawnBullet.GetComponent<Rigidbody>();
              rigidbodyBullet.velocity = transform.forward * shootingPower;
              cooldownLeft = cooldown;
+             
+             animator.SetTrigger("Shooting");
         }
         float input = Input.GetAxisRaw("TurnAround");
         transform.Rotate(0, input, 0);
