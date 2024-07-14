@@ -6,6 +6,8 @@ public class Player : MonoBehaviour
     Rigidbody rb;
     public int player_speed = 5;
     public Animator animator;
+
+    public FeetCollider feetCollider;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,7 +21,7 @@ public class Player : MonoBehaviour
         Vector3 movement = rb.velocity;
         movement.x = Input.GetAxisRaw("Horizontal") * player_speed;
         movement.z = Input.GetAxisRaw("Vertical") * player_speed;
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && feetCollider.isGrounded)
             movement.y = movement.y + 10;
         rb.velocity = movement;
         
